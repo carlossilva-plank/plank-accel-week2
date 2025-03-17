@@ -11,7 +11,9 @@
     "retrieval_agent": "./apps/agents/src/retrieval-agent/graph.ts:graph",
     "ex1":"./apps/agents/src/ex1/graph.ts:graph",
     "ex2":"./apps/agents/src/ex2/graph.ts:graph",
-    "ex3":"./apps/agents/src/ex3/graph.ts:graph"
+    "ex3":"./apps/agents/src/ex3/graph.ts:graph",
+    "ex4":"./apps/agents/src/ex4/graph.ts:graph",
+    "ex5":"./apps/agents/src/ex5/graph.ts:graph"
   },
   "env": ".env"
 }

@@ -1,3 +1,4 @@
+import { RunnableConfig } from "@langchain/core/runnables";
 import {
   StateGraph,
   Annotation,
@@ -7,11 +8,11 @@ import { ChatOpenAI } from "@langchain/openai";
 
 // Graph state
 const StateAnnotation = Annotation.Root({
+  ...MessagesAnnotation.spec,
   topic: Annotation<string>,
   joke: Annotation<string>,
   improvedJoke: Annotation<string>,
   finalJoke: Annotation<string>,
-  ...MessagesAnnotation.spec,
 });
 
 const llm = new ChatOpenAI({ model: "gpt-4o-mini" });
@@ -19,8 +20,14 @@ const llm = new ChatOpenAI({ model: "gpt-4o-mini" });
 // Define node functions
 
 // First LLM call to generate initial joke
-async function generateJoke(state: typeof StateAnnotation.State) {
-  const msg = await llm.invoke(`Write a short joke about ${state.topic}`);
+async function generateJoke(
+  state: typeof StateAnnotation.State,
+  config: RunnableConfig
+) {
+  const msg = await llm.invoke(
+    `Write a short joke about ${state.topic}`,
+    config
+  );
   return { joke: msg.content };
 }
 
@@ -34,17 +41,25 @@ function checkPunchline(state: typeof StateAnnotation.State) {
 }
 
 // Second LLM call to improve the joke
-async function improveJoke(state: typeof StateAnnotation.State) {
+async function improveJoke(
+  state: typeof StateAnnotation.State,
+  config: RunnableConfig
+) {
   const msg = await llm.invoke(
-    `Make this joke funnier by adding wordplay: ${state.joke}`
+    `Make this joke funnier by adding wordplay: ${state.joke}`,
+    config
   );
   return { improvedJoke: msg.content };
 }
 
 // Third LLM call for final polish
-async function polishJoke(state: typeof StateAnnotation.State) {
+async function polishJoke(
+  state: typeof StateAnnotation.State,
+  config: RunnableConfig
+) {
   const msg = await llm.invoke(
-    `Add a surprising twist to this joke: ${state.improvedJoke}`
+    `Add a surprising twist to this joke: ${state.improvedJoke}`,
+    config
   );
   return { output: msg.content };
 }
