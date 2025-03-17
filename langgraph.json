@@ -10,7 +10,8 @@
     "research_index_graph": "./apps/agents/src/research-agent/index-graph/graph.ts:graph",
     "retrieval_agent": "./apps/agents/src/retrieval-agent/graph.ts:graph",
     "ex1":"./apps/agents/src/ex1/graph.ts:graph",
-    "ex2":"./apps/agents/src/ex2/graph.ts:graph"
+    "ex2":"./apps/agents/src/ex2/graph.ts:graph",
+    "ex3":"./apps/agents/src/ex3/graph.ts:graph"
   },
   "env": ".env"
 }
