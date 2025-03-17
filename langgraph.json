@@ -15,7 +15,8 @@
     "ex4":"./apps/agents/src/ex4/graph.ts:graph",
     "ex5":"./apps/agents/src/ex5/graph.ts:graph",
     "ex6":"./apps/agents/src/ex6/graph.ts:graph",
-    "ex7":"./apps/agents/src/ex7/graph.ts:graph"
+    "ex7":"./apps/agents/src/ex7/graph.ts:graph",
+    "ex8":"./apps/agents/src/ex8/graph.ts:graph"
   },
   "env": ".env"
 }
