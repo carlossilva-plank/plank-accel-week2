@@ -16,7 +16,10 @@
     "ex5":"./apps/agents/src/ex5/graph.ts:graph",
     "ex6":"./apps/agents/src/ex6/graph.ts:graph",
     "ex7":"./apps/agents/src/ex7/graph.ts:graph",
-    "ex8":"./apps/agents/src/ex8/graph.ts:graph"
+    "ex8":"./apps/agents/src/ex8/graph.ts:graph",
+    "recursion":"./apps/agents/src/day2/recursion/graph.ts:graph",
+    "command":"./apps/agents/src/day2/command/graph.ts:graph",
+    "branching":"./apps/agents/src/day2/branching/graph.ts:graph"
   },
   "env": ".env"
 }
