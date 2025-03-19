@@ -1,25 +1,26 @@
 {
   "node_version": "20",
-  "dependencies": [
-    "."
-  ],
+  "dependencies": ["."],
   "graphs": {
     "agent": "./apps/agents/src/react-agent/graph.ts:graph",
     "memory_agent": "./apps/agents/src/memory-agent/graph.ts:graph",
     "research_agent": "./apps/agents/src/research-agent/retrieval-graph/graph.ts:graph",
     "research_index_graph": "./apps/agents/src/research-agent/index-graph/graph.ts:graph",
     "retrieval_agent": "./apps/agents/src/retrieval-agent/graph.ts:graph",
-    "ex1":"./apps/agents/src/ex1/graph.ts:graph",
-    "ex2":"./apps/agents/src/ex2/graph.ts:graph",
-    "ex3":"./apps/agents/src/ex3/graph.ts:graph",
-    "ex4":"./apps/agents/src/ex4/graph.ts:graph",
-    "ex5":"./apps/agents/src/ex5/graph.ts:graph",
-    "ex6":"./apps/agents/src/ex6/graph.ts:graph",
-    "ex7":"./apps/agents/src/ex7/graph.ts:graph",
-    "ex8":"./apps/agents/src/ex8/graph.ts:graph",
-    "recursion":"./apps/agents/src/day2/recursion/graph.ts:graph",
-    "command":"./apps/agents/src/day2/command/graph.ts:graph",
-    "branching":"./apps/agents/src/day2/branching/graph.ts:graph"
+    "ex1": "./apps/agents/src/ex1/graph.ts:graph",
+    "ex2": "./apps/agents/src/ex2/graph.ts:graph",
+    "ex3": "./apps/agents/src/ex3/graph.ts:graph",
+    "ex4": "./apps/agents/src/ex4/graph.ts:graph",
+    "ex5": "./apps/agents/src/ex5/graph.ts:graph",
+    "ex6": "./apps/agents/src/ex6/graph.ts:graph",
+    "ex7": "./apps/agents/src/ex7/graph.ts:graph",
+    "ex8": "./apps/agents/src/ex8/graph.ts:graph",
+    "recursion": "./apps/agents/src/day2/recursion/graph.ts:graph",
+    "command": "./apps/agents/src/day2/command/graph.ts:graph",
+    "branching": "./apps/agents/src/day2/branching/graph.ts:graph",
+    "checkpointer": "./apps/agents/src/day3/persistence/checkpointer.ts:graph",
+    "store": "./apps/agents/src/day3/persistence/store.ts:graph",
+    "postgres": "./apps/agents/src/day3/persistence/postgres.ts:graph"
   },
   "env": ".env"
 }

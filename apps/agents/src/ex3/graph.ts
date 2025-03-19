@@ -5,7 +5,7 @@ import {
   MessagesAnnotation,
 } from "@langchain/langgraph";
 import { ChatOpenAI } from "@langchain/openai";
-
+import { ConfigurationSchema } from "../react-agent/configuration.js";
 // Graph state
 const StateAnnotation = Annotation.Root({
   ...MessagesAnnotation.spec,
@@ -24,6 +24,11 @@ async function generateJoke(
   state: typeof StateAnnotation.State,
   config: RunnableConfig
 ) {
+  if (!state.topic) {
+    const lastMessage = state.messages?.at(-1)?.content;
+    state.topic = lastMessage as string;
+  }
+
   const msg = await llm.invoke(
     `Write a short joke about ${state.topic}`,
     config
@@ -45,6 +50,7 @@ async function improveJoke(
   state: typeof StateAnnotation.State,
   config: RunnableConfig
 ) {
+  console.log("improveJoke", state);
   const msg = await llm.invoke(
     `Make this joke funnier by adding wordplay: ${state.joke}`,
     config
@@ -61,11 +67,11 @@ async function polishJoke(
     `Add a surprising twist to this joke: ${state.improvedJoke}`,
     config
   );
-  return { output: msg.content };
+  return { output: msg.content, messages: [msg] };
 }
 
 // Build workflow
-const chain = new StateGraph(StateAnnotation)
+const chain = new StateGraph(StateAnnotation, ConfigurationSchema)
   .addNode("generateJoke", generateJoke)
   .addNode("improveJoke", improveJoke)
   .addNode("polishJoke", polishJoke)
