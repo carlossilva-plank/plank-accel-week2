@@ -20,7 +20,10 @@
     "branching": "./apps/agents/src/day2/branching/graph.ts:graph",
     "checkpointer": "./apps/agents/src/day3/persistence/checkpointer.ts:graph",
     "store": "./apps/agents/src/day3/persistence/store.ts:graph",
-    "postgres": "./apps/agents/src/day3/persistence/postgres.ts:graph"
+    "postgres": "./apps/agents/src/day3/persistence/postgres.ts:graph",
+    "editingmessages": "./apps/agents/src/day4/memory/short-term/editing.ts:graph",
+    "summarizing": "./apps/agents/src/day4/memory/short-term/summarizing.ts:graph",
+    "semanticsearch": "./apps/agents/src/day4/memory/long-term/semanticsearch.ts:graph"
   },
   "env": ".env"
 }

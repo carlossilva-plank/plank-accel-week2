@@ -7,7 +7,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev",
     "build": "turbo build:internal --filter=web",
     "build:internal": "next build",
     "start": "next start",
