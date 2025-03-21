@@ -5,8 +5,6 @@ import {
   StateGraph,
 } from "@langchain/langgraph";
 import { StateAnnotation } from "src/retrieval-agent/state.js";
-// import "@tensorflow/tfjs-backend-cpu";
-// import { TensorFlowEmbeddings } from "@langchain/community/embeddings/tensorflow";
 
 import { tool } from "@langchain/core/tools";
 import { LangGraphRunnableConfig } from "@langchain/langgraph";
@@ -22,13 +20,15 @@ import { BaseMessage, isHumanMessage } from "@langchain/core/messages";
 import { SystemMessage } from "@langchain/core/messages";
 import { isSystemMessage } from "@langchain/core/messages";
 
-// const embeddings = new TensorFlowEmbeddings({});
+const embeddings = new OpenAIEmbeddings({
+  model: "text-embedding-3-small",
+});
 
 const store = new InMemoryStore({
-  // index: {
-  //   embeddings,
-  //   dims: 128,
-  // },
+  index: {
+    embeddings,
+    dims: 1536,
+  },
 });
 
 let namespace = ["user_123", "memories"];
